@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8"/>
+
+        <script src="libs/jquery/jquery.js"></script>
+        <script src="libs/jquery/jquery.dataTables.js"></script>
+        <script src="modules/common/constants.js"></script>
+        <script src="modules/common/utils.js"></script>
+        <script src="modules/common/jquery-services.js"></script>
+        <script src="modules/common/rest-connector.js"></script>
+        <script src="modules/test/user/testUser.js"></script>
+        <script src="modules/app/kontrahent/kontrahent.js"></script>
+        <script src="modules/app/towar/towar.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="styles/styles.css" />
+        <script src="libs/angular/angular.min.js"></script>
+        <script src="libs/angular-aria/angular-aria.js"></script>
+        <script src="libs/angular-animate/angular-animate.js"></script>
+        <script src="libs/angular-material/angular-material.js"></script>
+        <link rel="stylesheet" href="styles/angular-material.css">
+        <script src="app.js"></script>
+
+    </head>
+
+    <body ng-controller="DemoController" >
+    <md-content flex>
+        <md-toolbar class="md-hue-2 md-whiteframe-z2" layout="row">
+            <div class="md-toolbar-tools">
+
+                <md-button class=" material-icons md-48" ng-click="clickSide('left')">
+                    <md-icon>menu</md-icon>
+                </md-button>
+
+                <h1 class="md-toolbar-tools"> eList</h1>
+
+                <md-button class="md-icon-button" aria-label="Favorite">
+                    <md-icon>local_activity</md-icon>
+                </md-button>
+
+                <md-button class="md-icon-button" aria-label="More">
+                    <md-icon>message</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-content layout="column">
+            <md-sidenav md-component-id="left" class="md-sidenav-left md-whiteframe-z2" layout="column">
+                <img style="width: 100%; height: 150px;" class="md-card-image" alt="login" src="images/login.jpg" />
+
+                <md-list>
+
+
+
+                    <md-item layout="row">
+                            <md-button onclick="switchMenu('modules/app/app-submenu.html');
+            switchTab('modules/app/kontrahent/kontrahent.html')">
+                                <md-icon>home</md-icon>
+                                <span class="nav__item" md-line>poka</span>
+                            </md-button>
+                    </md-item>
+                    <span id="submenu" style="display:inline-flex;"></span>
+
+                    <md-item style="display: block; width: 100%;">
+                            <md-button onclick="switchTab('modules/test/user/testUser.html')">
+                                <md-icon>menu</md-icon>
+                                <span class="nav__item" md-line>Lista użytkowników</span>
+                            </md-button>
+                    </md-item>
+
+                    <md-item style="display: block; width: 100%;">
+                        <a class="nav__link" href="#create">
+                            <md-button>
+                                <md-icon>playlist_add</md-icon>
+                                <span class="nav__item" md-line>Dodaj ogłoszenie</span>
+                            </md-button>
+                        </a>
+                    </md-item>
+
+                    <md-item style="float: left; display: block; width: 100%;">
+                        <a class="nav__link" href="#listaoddzialow">
+                            <md-button>
+                                <md-icon>account_balance</md-icon>
+                                <span class="nav__item" md-line>Lista oddziałów</span>
+                            </md-button>
+                        </a>
+                    </md-item>
+
+                    <md-item style="float: left; display: block; width: 100%;">
+                        <a class="nav__link" href="#login">
+                            <md-button>
+                                <md-icon>face</md-icon>
+                                <span class="nav__item" md-line>Logowanie</span>
+                            </md-button>
+                        </a>
+                    </md-item>
+
+                    <md-item style="float: left; display: block; width: 100%;">
+                        <a class="nav__link" href="#register">
+                            <md-button>
+                                <md-icon>person_add</md-icon>
+                                <span class="nav__item" md-line>Rejestracja</span>
+                            </md-button>
+                        </a>
+                    </md-item>
+
+                    <md-item style="float: left; display: block; width: 100%;">
+                        <a class="nav__link" href="#userList">
+                            <md-button>
+                                <md-icon>group_add</md-icon>
+                                <span class="nav__item" md-line>Lista użytkowników</span>
+                            </md-button>
+                        </a>
+                    </md-item>
+
+
+                </md-list>
+            </md-sidenav>
+            <md-content style="min-height: 100vh;">
+                <div id="content">
+
+                </div>
+            </md-content>
+        </md-content>
+    </md-content>
+
+        <script>
+            switchMenu('modules/app/app-submenu.html');
+            switchTab('modules/app/kontrahent/kontrahent.html');
+        </script>
+    </body>
+</html>
